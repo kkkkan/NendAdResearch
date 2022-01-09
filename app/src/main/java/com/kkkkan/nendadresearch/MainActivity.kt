@@ -8,6 +8,7 @@ import com.google.android.gms.ads.*
 import com.google.android.gms.ads.nativead.NativeAd
 import com.google.android.gms.ads.nativead.NativeAdOptions
 import com.kkkkan.nendadresearch.databinding.ActivityMainBinding
+import java.util.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             this
         ) { }
 
+        RequestConfiguration.Builder().setTestDeviceIds(Arrays.asList(testDeviceId)).build()
 
         binding.button.setOnClickListener {
             val adLoader = AdLoader.Builder(this, largeAdUnitId)
